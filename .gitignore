@@ -260,3 +260,6 @@ paket-files/
 __pycache__/
 *.pyc
 /ZOJ-2338
+*.vcxproj
+*.sln
+*.filters
