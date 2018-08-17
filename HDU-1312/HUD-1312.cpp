@@ -20,7 +20,7 @@ bool vis [22] [22];//辣鸡玩意用MAX报错
 node start;
 
 int bfs(int len,int wid) {
-    int count = 0;
+    int count = 1;
     memset(vis, false, sizeof(vis));//初始化访问标记
     vector<vector<char>>maze(len, vector<char>(wid, 0));//创建二维数组及其初始化
     for (int i = 0; i < len; ++i) {
@@ -35,6 +35,7 @@ int bfs(int len,int wid) {
     node now, next;
     now = start;
     q.push(now);//起始节点入列
+    vis[now.row][now.col] = true;//起始节点标记
     while (!q.empty()) {
         now = q.front();
         q.pop();
@@ -44,7 +45,7 @@ int bfs(int len,int wid) {
             if (next.row<0 || next.col<0 || next.row>len-1 || next.col>wid-1 || vis[next.row][next.col] || maze[next.row][next.col] == '#') {
                 continue;
             }
-            vis[next.row][next.col] = true;//标记该地块已被记录
+            vis[next.row][next.col] = true;//标记该地块已被访问
             q.push(next);//入列
             count++;
         }
