@@ -19,3 +19,7 @@
 *.filters
 *.vcxproj
 /ZOJ-2338/ZOJ-2338
+*.dev
+/入门
+/基础
+/训练
